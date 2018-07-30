@@ -42,7 +42,7 @@ class AWSM_Jobs_Docs_Viewer {
          <?php
         } else {?>
             <div class="awsm-resume-none">
-                <h2><?php esc_html_e( 'File not found!', 'awsm-job-openings' ); ?></h2>
+                <h2><strong><?php esc_html_e( 'No resume to preview. File not found!', 'awsm-job-openings' ); ?></strong></h2>
             </div>
         <?php  }
     }
