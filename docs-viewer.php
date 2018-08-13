@@ -1,18 +1,18 @@
 <?php
 /*
-Plugin Name: Awsm Job Openings Docs Viewer
+Plugin Name: WP Job Openings Docs Viewer
 Plugin URI: http://wordpress.org/plugins/job-openings/
-Description: Awsm Job Openings Docs Viewer is an add-on for Awsm Job Openings plugin. This plugin allows you to view the applicant resume.
+Description: WP Job Openings Docs Viewer is an add-on for WP Job Openings plugin. This plugin allows you to view the applicant resume from admin panel.
 Author: AWSM Innovations
 Version: 1.0
-Text domain : awsm-job-openings
+Text domain : wp-job-openings-docs-viewer-add-on
 Licence :GPLv2
 */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class AWSM_Jobs_Docs_Viewer {
+class AWSM_Job_Openings_Docs_Viewer {
     private static $_instance = null;
 
     public static function init() {
@@ -29,7 +29,7 @@ class AWSM_Jobs_Docs_Viewer {
 
     public function register_meta_boxes()
     {
-        add_meta_box( 'Resume Viewer', __( 'Resume Preview', 'awsm-job-openings' ), array( $this, 'docs_viewer_handle' ), 'awsm_job_application', 'advanced', 'low' );
+        add_meta_box( 'Resume Viewer', __( 'Resume Preview', 'wp-job-openings-docs-viewer-add-on' ), array( $this, 'docs_viewer_handle' ), 'awsm_job_application', 'advanced', 'low' );
     }
 
     public function docs_viewer_handle(){
@@ -42,20 +42,20 @@ class AWSM_Jobs_Docs_Viewer {
          <?php
         } else {?>
             <div class="awsm-resume-none">
-                <h2><strong><?php esc_html_e( 'No resume to preview. File not found!', 'awsm-job-openings' ); ?></strong></h2>
+                <h2><strong><?php esc_html_e( 'No resume to preview. File not found!', 'wp-job-openings-docs-viewer-add-on' ); ?></strong></h2>
             </div>
         <?php  }
     }
 
     public function handle_plugin_activation(){
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if ( ! is_plugin_active( 'awsm-job-openings/awsm-job-openings.php' ) || ! class_exists( 'AWSM_Job_Openings' ) ) {
+        if ( ! is_plugin_active( 'wp-job-openings/wp-job-openings.php' ) || ! class_exists( 'AWSM_Job_Openings' ) ) {
                 add_action( 'admin_notices', function() {
         ?>
             <div class="updated error">
                 <p>
                     <?php
-                        printf( __( 'The plugin <strong>"%2$s"</strong> needs the plugin <strong>"%1$s"</strong> active.<br />Please install or activate <strong>"%1$s"</strong>', ' awsm-job-openings' ), 'Awsm Job Openings', 'Awsm Job Openings Docs Viewer' );
+                        printf( __( 'The plugin <strong>"%2$s"</strong> needs the plugin <strong>"%1$s"</strong> active.<br />Please install or activate <strong>"%1$s"</strong>', ' wp-job-openings-docs-viewer-add-on' ), 'WP Job Openings', 'WP Job Openings Docs Viewer' );
                     ?>
                 </p>
             </div>
@@ -64,4 +64,4 @@ class AWSM_Jobs_Docs_Viewer {
         }
     }
 }
-add_action( 'plugins_loaded', 'AWSM_Jobs_Docs_Viewer::init' );
+add_action( 'plugins_loaded', 'AWSM_Job_Openings_Docs_Viewer::init' );
