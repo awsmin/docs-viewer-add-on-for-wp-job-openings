@@ -9,7 +9,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Summary ==
 
-The plugin will allow you to view uploaded applicant resume from the admin panel of WP Job Openings Plugin.
+The plugin will allow you to view uploaded applicant resume from the admin panel of [WP Job Openings](https://wordpress.org/plugins/wp-job-openings/) Plugin.
 
 == Description ==
 
@@ -39,7 +39,7 @@ Requires:
 
 == Changelog ==
 
-= V 1.0 - 2018-08-13 =
+= V 1.0 - 2018-08-29 =
 * Initial Release
 
 == Upgrade Notice ==
