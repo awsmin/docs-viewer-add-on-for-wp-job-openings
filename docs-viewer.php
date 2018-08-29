@@ -97,7 +97,7 @@ class AWSM_Job_Openings_Docs_Viewer {
             <div class="updated error">
                 <p>
                     <?php
-                        printf( __( 'The plugin <strong>"%2$s"</strong> needs the plugin <strong>"%1$s"</strong> active.<br />Please %3$s <strong>"%1$s"</strong>', 'wp-job-openings-docs-viewer-add-on' ), 'WP Job Openings', 'WP Job Openings Docs Viewer', $this->get_main_plugin_activation_link() );
+                        printf( esc_html__( 'The plugin %2$s needs the plugin %1$s active. %4$s Please %3$s %1$s', 'wp-job-openings-docs-viewer-add-on' ), '<strong>"WP Job Openings"</strong>', '<strong>"WP Job Openings Docs Viewer"</strong>', $this->get_main_plugin_activation_link(), '<br />' );
                     ?>
                 </p>
             </div>
