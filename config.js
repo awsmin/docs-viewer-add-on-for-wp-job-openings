@@ -2,6 +2,7 @@
  * config file for development
  * ---------------------------
  * @package wp-job-openings
+ * @subpackage wp-job-openings-docs-viewer-add-on
  * @since 1.0.0
  */
 
