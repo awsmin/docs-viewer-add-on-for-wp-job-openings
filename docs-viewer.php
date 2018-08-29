@@ -8,7 +8,7 @@ Author URI: https://awsm.in/
 Version: 1.0
 Licence :GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text domain : wp-job-openings-docs-viewer-add-on
+Text domain : docs-viewer-add-on-for-wp-job-openings
 Domain Path: /languages
 */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,11 +36,11 @@ class AWSM_Job_Openings_Docs_Viewer {
     }
 
     public function load_textdomain() {
-        load_plugin_textdomain( 'wp-job-openings-docs-viewer-add-on', false, basename( dirname( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'docs-viewer-add-on-for-wp-job-openings', false, basename( dirname( __FILE__ ) ) . '/languages' );
     }
 
     public function register_meta_boxes() {
-        add_meta_box( 'awsm-jobs-resume-viewer', esc_html__( 'Resume Preview', 'wp-job-openings-docs-viewer-add-on' ), array( $this, 'docs_viewer_handle' ), 'awsm_job_application', 'advanced', 'low' );
+        add_meta_box( 'awsm-jobs-resume-viewer', esc_html__( 'Resume Preview', 'docs-viewer-add-on-for-wp-job-openings' ), array( $this, 'docs_viewer_handle' ), 'awsm_job_application', 'advanced', 'low' );
     }
 
     public function docs_viewer_handle(){
@@ -54,7 +54,7 @@ class AWSM_Job_Openings_Docs_Viewer {
         else :
          ?>
             <div class="awsm-resume-none">
-                <h2><strong><?php esc_html_e( 'No resume to preview. File not found!', 'wp-job-openings-docs-viewer-add-on' ); ?></strong></h2>
+                <h2><strong><?php esc_html_e( 'No resume to preview. File not found!', 'docs-viewer-add-on-for-wp-job-openings' ); ?></strong></h2>
             </div>
         <?php
         endif;
@@ -67,13 +67,13 @@ class AWSM_Job_Openings_Docs_Viewer {
         $installed_plugin = get_plugins( '/' . $plugin_slug );
         if ( empty( $installed_plugin ) ) {
             if ( get_filesystem_method( array(), WP_PLUGIN_DIR ) === 'direct' ) {
-                $link_action = esc_html__( 'Install', 'wp-job-openings-docs-viewer-add-on' );
+                $link_action = esc_html__( 'Install', 'docs-viewer-add-on-for-wp-job-openings' );
                 $action_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $plugin_slug ), 'install-plugin_' . $plugin_slug );
                 $link_class = ' install-now';
             }
         } else {
             if( is_plugin_inactive( AWSM_JOBS_MAIN_PLUGIN ) ) {
-                $link_action = esc_html__( 'Activate', 'wp-job-openings-docs-viewer-add-on' );
+                $link_action = esc_html__( 'Activate', 'docs-viewer-add-on-for-wp-job-openings' );
                 $action_url = wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=' . AWSM_JOBS_MAIN_PLUGIN ), 'activate-plugin_' . AWSM_JOBS_MAIN_PLUGIN );
                 $link_class = ' activate-now';
             }
@@ -97,7 +97,7 @@ class AWSM_Job_Openings_Docs_Viewer {
             <div class="updated error">
                 <p>
                     <?php
-                        printf( esc_html__( 'The plugin %2$s needs the plugin %1$s active. %4$s Please %3$s %1$s', 'wp-job-openings-docs-viewer-add-on' ), '<strong>"WP Job Openings"</strong>', '<strong>"WP Job Openings Docs Viewer"</strong>', $this->get_main_plugin_activation_link(), '<br />' );
+                        printf( esc_html__( 'The plugin %2$s needs the plugin %1$s active. %4$s Please %3$s %1$s', 'docs-viewer-add-on-for-wp-job-openings' ), '<strong>"WP Job Openings"</strong>', '<strong>"WP Job Openings Docs Viewer"</strong>', $this->get_main_plugin_activation_link(), '<br />' );
                     ?>
                 </p>
             </div>

@@ -2,7 +2,7 @@
  * Automating Development Tasks
  * ----------------------------
  * @package wp-job-openings
- * @subpackage wp-job-openings-docs-viewer-add-on
+ * @subpackage docs-viewer-add-on-for-wp-job-openings
  * @since 1.0.0
  */
 

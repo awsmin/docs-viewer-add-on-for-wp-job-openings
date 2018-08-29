@@ -2,7 +2,7 @@
  * config file for development
  * ---------------------------
  * @package wp-job-openings
- * @subpackage wp-job-openings-docs-viewer-add-on
+ * @subpackage docs-viewer-add-on-for-wp-job-openings
  * @since 1.0.0
  */
 
@@ -46,9 +46,9 @@ module.exports = {
 		}
 	},
 	translation: {
-		domain: "wp-job-openings-docs-viewer-add-on",
+		domain: "docs-viewer-add-on-for-wp-job-openings",
 		package: "Docs Viewer Add-On for WP Job Openings",
 		team: "AWSM innovations <hello@awsm.in>",
-		dest: "./languages/wp-job-openings-docs-viewer-add-on.pot"
+		dest: "./languages/docs-viewer-add-on-for-wp-job-openings.pot"
 	}
 };
