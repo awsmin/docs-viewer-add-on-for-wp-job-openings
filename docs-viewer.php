@@ -92,12 +92,15 @@ class AWSM_Job_Openings_Docs_Viewer {
                         return;
                     }
                 }
+                if( ! current_user_can( 'install_plugins' ) ) {
+                    return;
+                }
                 add_action( 'admin_notices', function() {
         ?>
             <div class="updated error">
                 <p>
                     <?php
-                        printf( esc_html__( 'The plugin %2$s needs the plugin %1$s active. %4$s Please %3$s %1$s', 'docs-viewer-add-on-for-wp-job-openings' ), '<strong>"WP Job Openings"</strong>', '<strong>"WP Job Openings Docs Viewer"</strong>', $this->get_main_plugin_activation_link(), '<br />' );
+                        printf( esc_html__( 'The plugin %2$s needs the plugin %1$s active. %4$s Please %3$s %1$s', 'docs-viewer-add-on-for-wp-job-openings' ), '<strong>"WP Job Openings"</strong>', '<strong>"Docs Viewer Add-On for WP Job Openings"</strong>', $this->get_main_plugin_activation_link(), '<br />' );
                     ?>
                 </p>
             </div>
