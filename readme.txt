@@ -4,7 +4,6 @@ Tags: jobs plugin, wp job openings, resume viewer, docs viewer, cv viewer, job l
 Requires at least: 4.0
 Tested up to: 4.9.8
 Stable tag: trunk
-Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +15,7 @@ The plugin will allow you to view uploaded applicant resume from the admin panel
 The plugin will add a preview of the uploaded resume in the applicant detail page of WP Job Openings Plugin. You need not download the uploaded resume anymore! Powered by Google Docs Viewer.
 
 
-[View Demo](http://dev.awsm.in/innovations/wp-job-openings-plugin)
+[View Demo](https://demo.awsm.in/wp-job-openings/)
 
 
 = Key Features =
@@ -41,5 +40,5 @@ The plugin will add a preview of the uploaded resume in the applicant detail pag
 
 == Upgrade Notice ==
 
-= V 1.0 - 2018-08-13 =
-* Initial Release
+= 1.0 =
+Initial Release

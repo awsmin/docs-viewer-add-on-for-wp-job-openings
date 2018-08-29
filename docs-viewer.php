@@ -4,10 +4,12 @@ Plugin Name: Docs Viewer Add-On for WP Job Openings
 Plugin URI: http://wordpress.org/plugins/
 Description: Docs Viewer is an add-on for WP Job Openings plugin. This plugin allows you to view the applicant resume from admin panel.
 Author: AWSM Innovations
+Author URI: https://awsm.in/
 Version: 1.0
-Text domain : wp-job-openings-docs-viewer-add-on
 Licence :GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text domain : wp-job-openings-docs-viewer-add-on
+Domain Path: /languages
 */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -28,8 +30,13 @@ class AWSM_Job_Openings_Docs_Viewer {
     }
 
     public function __construct() {
+        add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
         add_action( 'add_meta_boxes', array( $this, 'register_meta_boxes' ) );
         add_action( 'admin_init', array( $this, 'handle_plugin_activation' ) );
+    }
+
+    public function load_textdomain() {
+        load_plugin_textdomain( 'wp-job-openings-docs-viewer-add-on', false, basename( dirname( __FILE__ ) ) . '/languages' );
     }
 
     public function register_meta_boxes() {
