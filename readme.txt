@@ -39,6 +39,9 @@ Requires:
 
 == Changelog ==
 
+= V 1.0.1 - 2026-02-09 =
+* Minor bug fixes and code improvements.
+
 = V 1.0 - 2018-08-29 =
 * Initial Release
 
