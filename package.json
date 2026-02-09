@@ -1,6 +1,6 @@
 {
 	"name": "docs-viewer-add-on-for-wp-job-openings",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Docs Viewer is an add-on for WP Job Openings plugin. This plugin allows you to view the applicant resume from admin panel.",
 	"main": "gulpfile.js",
 	"scripts": {
